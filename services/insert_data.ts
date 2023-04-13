@@ -17,7 +17,7 @@ async function insertTeamData() {
       logo: teamMatch.logo
     };
 
-    knex('teams')
+    await knex('teams')
       .insert(teamData)
       .then(() => {
         console.log(`Time ${teamMatch.name} inserido com sucesso!`);
@@ -52,6 +52,7 @@ async function insertMatchesData() {
       }
     }
   }
+  process.exit(0);
 }
 
 insertTeamData();
