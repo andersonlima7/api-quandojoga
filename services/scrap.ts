@@ -8,12 +8,12 @@ exec('pip install -r ./requirements.txt', (err, stdout, stderr) => {
     return;
   }
   console.log(`Dependências do Python instaladas com sucesso: ${stdout}`);
-});
 
-exec('python ./services/crawler.py', (error, stdout, stderr) => {
-  if (error) {
-    console.error(`Erro ao executar o script Python: ${error}`);
-    return;
-  }
-  console.log(`Saída do script Python: ${stdout}`);
+  exec('python ./services/crawler.py', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Erro ao executar o script Python: ${error}`);
+      return;
+    }
+    console.log(`Saída do script Python: ${stdout}`);
+  });
 });
