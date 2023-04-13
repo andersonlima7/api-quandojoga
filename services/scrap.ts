@@ -1,16 +1,19 @@
-import { spawn } from 'child_process';
+import { exec } from 'child_process';
 
 // Run the crawler.
-const pythonProcess = spawn('python', ['./services/crawler.py']);
 
-pythonProcess.stdout.on('data', data => {
-  console.log(`stdout: ${data}`);
+exec('pip install -r ./requirements.txt', (err, stdout, stderr) => {
+  if (err) {
+    console.error(`Erro ao instalar as dependências do Python: ${err}`);
+    return;
+  }
+  console.log(`Dependências do Python instaladas com sucesso: ${stdout}`);
 });
 
-pythonProcess.stderr.on('data', data => {
-  console.error(`stderr: ${data}`);
-});
-
-pythonProcess.on('close', code => {
-  console.log(`child process exited with code ${code}`);
+exec('python ./services/crawler.py', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`Erro ao executar o script Python: ${error}`);
+    return;
+  }
+  console.log(`Saída do script Python: ${stdout}`);
 });

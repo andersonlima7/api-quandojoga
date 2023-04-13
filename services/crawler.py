@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import locale
 locale.setlocale(locale.LC_ALL, 'pt_BR.utf8')
-import json
 
 
 
