@@ -39,7 +39,7 @@ async function insertMatchesData() {
         date: matches[i].date as string,
         time: matches[i].time as string,
         championship: matches[i].championship as string,
-        tv: JSON.stringify(teamMatch.matches[i].tv) as unknown as string[]
+        tv: teamMatch.matches[i].tv
       };
 
       try {
