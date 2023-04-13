@@ -3,14 +3,33 @@ import json
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-import locale
-locale.setlocale(locale.LC_ALL, 'pt_BR.utf8')
+# import locale
+
+# try:
+#     locale.setlocale(locale.LC_ALL, 'pt_BR.utf8')
+# except:
+#     locale.setlocale(locale.LC_ALL, 'en_US')
 
 
 
 today = datetime.now()
 matches = []
 seeds = []
+
+months_conversion = {
+    'Janeiro': 1,
+    'Fevereiro': 2,
+    'Março': 3,
+    'Abril': 4,
+    'Maio': 5,
+    'Junho': 6,
+    'Julho': 7,
+    'Agosto': 8,
+    'Setembro': 9,
+    'Outubro': 10,
+    'Novembro': 11,
+    'Dezembro': 12
+}
 
 
 def daysFromToday(date):
@@ -135,9 +154,11 @@ def scrapping (seed) :
             championship = cells[5].text.strip()
             tv = ['']
 
-            date_str = f"{date} {month_date} {year_date}"
 
-            date_obj = datetime.strptime(date_str, '%d %B %Y')
+            month_value = months_conversion[month_date]
+            date_str = f"{date} {month_value} {year_date}"
+
+            date_obj = datetime.strptime(date_str, "%d %m %Y")
             formatted_date = date_obj.strftime('%d-%m-%Y')
 
             # dias entre hoje e a data.
