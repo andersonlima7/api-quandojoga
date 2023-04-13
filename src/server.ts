@@ -21,9 +21,8 @@ app.get('/', async () => {
         description: 'Retorna todas as partidas'
       },
       {
-        url: 'https://www-matches-api.onrender.com/matches/:23/:04/:15',
-        urlExample:
-          'https://www-matches-api.onrender.com/matches/year/month/day',
+        url: 'https://www-matches-api.onrender.com/matches/year/month/day',
+        urlExample: 'https://www-matches-api.onrender.com/matches/23/04/15',
         description: 'Retorna todas as partidas da data determinada'
       },
       {

@@ -1,7 +1,7 @@
 import { spawn } from 'child_process';
 
 // Run the crawler.
-const pythonProcess = spawn('python', ['./src/services/crawler.py']);
+const pythonProcess = spawn('python', ['./services/crawler.py']);
 
 pythonProcess.stdout.on('data', data => {
   console.log(`stdout: ${data}`);
