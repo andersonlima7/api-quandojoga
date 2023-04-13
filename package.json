@@ -10,7 +10,7 @@
     "lint": "eslint src --ext .ts --fix",
     "knex": "node --loader tsx ./node_modules/knex/bin/cli.js",
     "scrap": "tsx services/scrap.ts",
-    "populate": "yarn knex migrate:down 20230413001555_create-matches.ts & yarn knex migrate:up 20230413001555_create-matches.ts & yarn knex migrate:down 20230412235631_create-teams.ts & yarn knex migrate:up 20230412235631_create-teams.ts & tsx services/insert_data.ts",
+    "populate": "tsx services/insert_data.ts",
     "build": "tsup src --out-dir build"
   },
   "keywords": [],
