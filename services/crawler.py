@@ -120,7 +120,7 @@ def scrapping (seed) :
     team_name = soup.find('span', {"class": "db fw-bold"}).text.strip()
 
     #Logo do time
-    team_logo = f"https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/{ID}.png&h=200&w=200"
+    team_logo = f"https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/{ID}.png&h=800&w=800"
 
 
     print(f"Scrapping {team_name}...")
