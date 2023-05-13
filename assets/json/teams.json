@@ -1,0 +1,257 @@
+[
+  {
+    "league": "Brasileirão Série A",
+    "teams": [
+      {
+        "name": "América-MG",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F6618.png"
+      },
+      {
+        "name": "Athletico Paranaense",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1862.png"
+      },
+      {
+        "name": "Atlético-MG",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1683.png"
+      },
+      {
+        "name": "Bahia",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1795.png"
+      },
+      {
+        "name": "Botafogo",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1792.png"
+      },
+      {
+        "name": "Corinthians",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1649.png"
+      },
+      {
+        "name": "Coritiba",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1796.png"
+      },
+      {
+        "name": "Cruzeiro",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1794.png"
+      },
+      {
+        "name": "Cuiabá",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F2704.png"
+      },
+      {
+        "name": "Flamengo",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1802.png"
+      },
+      {
+        "name": "Fluminense",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1666.png"
+      },
+      {
+        "name": "Fortaleza",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F4831.png"
+      },
+      {
+        "name": "Goiás",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1863.png"
+      },
+      {
+        "name": "Grêmio",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1670.png"
+      },
+      {
+        "name": "Internacional",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1799.png"
+      },
+      {
+        "name": "Palmeiras",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1693.png"
+      },
+      {
+        "name": "RB Bragantino",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F4734.png"
+      },
+      {
+        "name": "Santos",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1798.png"
+      },
+      {
+        "name": "São Paulo",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1677.png"
+      },
+      {
+        "name": "Vasco da Gama",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1790.png"
+      }
+    ]
+  },
+  {
+    "league": "Brasileirão Série B",
+    "teams": [
+      {
+        "name": "ABC",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F2661.png"
+      },
+      {
+        "name": "Atlético-GO",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1800.png"
+      },
+      {
+        "name": "Avaí",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F4964.png"
+      },
+      {
+        "name": "Botafogo-SP",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F4729.png"
+      },
+      {
+        "name": "Ceará",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F4833.png"
+      },
+      {
+        "name": "Chapecoense",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F2401.png"
+      },
+      {
+        "name": "CRB",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F4828.png"
+      },
+      {
+        "name": "Criciúma",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1860.png"
+      },
+      {
+        "name": "Grêmio Novorizontino",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F6310.png"
+      },
+      {
+        "name": "Guarani",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F2694.png"
+      },
+      {
+        "name": "Ituano",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F4727.png"
+      },
+      {
+        "name": "Juventude",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F4779.png"
+      },
+      {
+        "name": "Londrina",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F2681.png"
+      },
+      {
+        "name": "Mirassol",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F7396.png"
+      },
+      {
+        "name": "Ponte Preta",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1793.png"
+      },
+      {
+        "name": "Sampaio Corrêa FC",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F4823.png"
+      },
+      {
+        "name": "Sport Recife",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1797.png"
+      },
+      {
+        "name": "Tombense",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F2669.png"
+      },
+      {
+        "name": "Vila Nova",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F2865.png"
+      },
+      {
+        "name": "Vitória",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F1861.png"
+      }
+    ]
+  },
+  {
+    "league": "Premier League",
+    "teams": [
+      {
+        "name": "AFC Bournemouth",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F622.png"
+      },
+      {
+        "name": "Arsenal",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F2.png"
+      },
+      {
+        "name": "Aston Villa",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F199.png"
+      },
+      {
+        "name": "Brentford FC",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F671.png"
+      },
+      {
+        "name": "Brighton & Hove Albion FC",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F670.png"
+      },
+      {
+        "name": "Chelsea",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F9.png"
+      },
+      {
+        "name": "Crystal Palace",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F567.png"
+      },
+      {
+        "name": "Everton",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F197.png"
+      },
+      {
+        "name": "Fulham FC",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F211.png"
+      },
+      {
+        "name": "Leeds United",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F571.png"
+      },
+      {
+        "name": "Leicester",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F572.png"
+      },
+      {
+        "name": "Liverpool",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F18.png"
+      },
+      {
+        "name": "Manchester City",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F209.png"
+      },
+      {
+        "name": "Manchester United",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F21.png"
+      },
+      {
+        "name": "Newcastle",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F207.png"
+      },
+      {
+        "name": "Nottingham Forest",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F577.png"
+      },
+      {
+        "name": "Southampton",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F615.png"
+      },
+      {
+        "name": "Tottenham",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F202.png"
+      },
+      {
+        "name": "West Ham",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F198.png"
+      },
+      {
+        "name": "Wolverhampton Wanderers",
+        "logo": "https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252Fteams%252F164%252F203.png"
+      }
+    ]
+  }
+]

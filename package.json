@@ -10,7 +10,9 @@
     "lint": "eslint src --ext .ts --fix",
     "knex": "node --loader tsx ./node_modules/knex/bin/cli.js",
     "scrap": "tsx services/scrap.ts",
-    "populate": "knex migrate:rollback --all && knex migrate:latest && yarn scrap && tsx services/insert_data.ts",
+    "update": "tsx services/insert_data.ts",
+    "migrations": "knex migrate:rollback --all && knex migrate:latest",
+    "populate": "yarn migrations && yarn scrap && yarn update",
     "build": "yarn populate && tsup src --out-dir build"
   },
   "keywords": [],

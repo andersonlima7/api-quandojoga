@@ -14,7 +14,10 @@ export async function teamsRoutes(app: FastifyInstance) {
     });
     const { name } = requestSchema.parse(request.params);
 
-    const teams = await knex('teams').select('*').where('name', name);
+    const teams = await knex('teams')
+      .select('*')
+      .whereRaw('lower(name) = ?', name.toLowerCase());
+
     return teams;
   });
 }

@@ -3,53 +3,61 @@ import crypto from 'node:crypto';
 import fs from 'fs';
 
 // Save the data in the bd.
-const data = fs.readFileSync('assets/json/matches.json');
-const teamsMatches = JSON.parse(data.toString());
+const matchesData = fs.readFileSync('assets/json/matches.json');
+const matches = JSON.parse(matchesData.toString());
 
-// console.log(JSON.stringify(teamsMatches, null, 2));
+const teamsData = fs.readFileSync('assets/json/teams.json');
+const teams = JSON.parse(teamsData.toString());
 
 async function insertTeamData() {
   // Insert the team data in table `teams`.s
-  for (const teamMatch of teamsMatches) {
-    const teamData = {
-      id: crypto.randomUUID(),
-      name: teamMatch.name,
-      logo: teamMatch.logo
-    };
-
-    await knex('teams')
-      .insert(teamData)
-      .then(() => {
-        console.log(`Time ${teamMatch.name} inserido com sucesso!`);
-      })
-      .catch(err => {
-        console.error(`Erro ao inserir o time ${teamMatch.name}: ${err}`);
-      });
+  for (const leagueData of teams) {
+    const { league } = leagueData;
+    const { teams } = leagueData;
+    for (const team of teams) {
+      const teamData = {
+        id: crypto.randomUUID(),
+        name: team.name,
+        logo: team.logo,
+        league: league
+      };
+      await knex('teams')
+        .insert(teamData)
+        .then(() => {
+          console.log(`Time ${team.name} inserido com sucesso!`);
+        })
+        .catch(err => {
+          console.error(`Erro ao inserir o time ${team.name}: ${err}`);
+        });
+    }
   }
 }
 
 async function insertMatchesData() {
-  for (const teamMatch of teamsMatches) {
-    const { matches } = teamMatch;
-    for (let i = 0; i < matches.length; i += 1) {
-      const matchData = {
-        id: crypto.randomUUID(),
-        team_home: matches[i].team_home as string,
-        team_away: matches[i].team_away as string,
-        date: matches[i].date as string,
-        time: matches[i].time as string,
-        championship: matches[i].championship as string,
-        tv: teamMatch.matches[i].tv
-      };
+  for (const match of matches) {
+    const matchData = {
+      id: crypto.randomUUID(),
+      team_home: match.team_home,
+      team_home_logo: match.team_home_logo,
+      team_away: match.team_away,
+      team_away_logo: match.team_away_logo,
+      date: match.date,
+      time: match.time,
+      championship: match.championship,
+      championship_logo: match.championship_logo,
+      location: match.location,
+      tv: match.tv
+    };
 
-      try {
-        await knex('matches').insert(matchData);
-        console.log(`Partida do time ${teamMatch.name} inserida com sucesso!`);
-      } catch (err) {
-        console.error(
-          `Erro ao inserir a partida do time ${teamMatch.name}: ${err}`
-        );
-      }
+    try {
+      await knex('matches').insert(matchData);
+      console.log(
+        `Partida ${match.team_home} x ${match.team_away} inserida com sucesso!`
+      );
+    } catch (err) {
+      console.error(
+        `Erro ao inserir a partida Partida ${match.team_home} x ${match.team_away}: ${err}`
+      );
     }
   }
   process.exit(0);
