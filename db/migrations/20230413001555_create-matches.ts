@@ -11,7 +11,8 @@ export async function up(knex: Knex): Promise<void> {
     table.text('time').notNullable();
     table.text('championship').notNullable();
     table.text('championship_logo').notNullable();
-    table.text('location').notNullable();
+    table.text('location');
+    table.text('description');
     table.text('tv');
     table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable();
   });

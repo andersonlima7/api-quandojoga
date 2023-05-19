@@ -6,33 +6,6 @@ import fs from 'fs';
 const matchesData = fs.readFileSync('assets/json/matches.json');
 const matches = JSON.parse(matchesData.toString());
 
-const teamsData = fs.readFileSync('assets/json/teams.json');
-const teams = JSON.parse(teamsData.toString());
-
-async function insertTeamData() {
-  // Insert the team data in table `teams`.s
-  for (const leagueData of teams) {
-    const { league } = leagueData;
-    const { teams } = leagueData;
-    for (const team of teams) {
-      const teamData = {
-        id: crypto.randomUUID(),
-        name: team.name,
-        logo: team.logo,
-        league: league
-      };
-      await knex('teams')
-        .insert(teamData)
-        .then(() => {
-          console.log(`Time ${team.name} inserido com sucesso!`);
-        })
-        .catch(err => {
-          console.error(`Erro ao inserir o time ${team.name}: ${err}`);
-        });
-    }
-  }
-}
-
 async function insertMatchesData() {
   for (const match of matches) {
     const matchData = {
@@ -46,6 +19,7 @@ async function insertMatchesData() {
       championship: match.championship,
       championship_logo: match.championship_logo,
       location: match.location,
+      description: match.description,
       tv: match.tv
     };
 
@@ -63,5 +37,4 @@ async function insertMatchesData() {
   process.exit(0);
 }
 
-insertTeamData();
 insertMatchesData();
