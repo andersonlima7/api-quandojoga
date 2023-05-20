@@ -56,7 +56,7 @@ def getMatchSeeds(seed):
     page = requests.get(seed)
     soup = BeautifulSoup(page.text, "html.parser")
 
-    match_description = ''
+    description = ''
 
     championship_matches = soup.find_all('div', {'class': 'XpaLayout_xpaLayoutContainerComponentResolver__32Dls xpaLayoutContainerComponentResolver--matchCardsList'})
     for championship in championship_matches:
@@ -64,13 +64,13 @@ def getMatchSeeds(seed):
         if match_description_element:
             match_description_h3 = match_description_element.find('h3', {'class': 'title-7-medium SectionHeader_subtitle__vO7cC title-6-bold'})
             if match_description_h3:
-                match_description = match_description_h3.contents[0]            
+                description = match_description_h3.contents[0]            
             matches_links = championship.find_all('a', {"class": "MatchCard_matchCard__JSuaw"})
             for link in matches_links:
                 href = link.get("href")
                 new_seed = f"https://onefootball.com{href}"
                 if new_seed not in all_matches_seeds:
-                    matches_seeds.append({"seed": new_seed, "description": match_description})
+                    matches_seeds.append({"seed": new_seed, "description": description})
                     all_matches_seeds.append(new_seed)
 
    
@@ -78,7 +78,7 @@ def getMatchSeeds(seed):
 
     
 # Coleta os dados das partidas.
-def scrapping (seed, match_description) : 
+def scrapping (seed, description) : 
     match = {}
 
     # Coleta a página.
@@ -120,7 +120,7 @@ def scrapping (seed, match_description) :
         is_onefootball = soup.find('p', {'class': 'text-5 FreeToAir_ftaVideo__partnerName__ey9Iz'})
         if is_onefootball:
             tv = is_onefootball.contents[0]
-        match = {"team_home":team_home_name, "team_home_logo": team_home_logo, "team_away" :team_away_name, "team_away_logo": team_away_logo,"date":match_date,"time":match_time, "championship": championship_name, "championship_logo": championship_logo, "match_description" : match_description, "location": location, "tv": tv}
+        match = {"team_home":team_home_name, "team_home_logo": team_home_logo, "team_away" :team_away_name, "team_away_logo": team_away_logo,"date":match_date,"time":match_time, "championship": championship_name, "championship_logo": championship_logo, "description" : description, "location": location, "tv": tv}
 
     except:
         print(f"Erro coleta da partida {seed}")
