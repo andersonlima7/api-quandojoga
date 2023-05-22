@@ -53,14 +53,19 @@ export async function matchesRoutes(app: FastifyInstance) {
 
     const { date } = requestSchema.parse(request.params);
 
-    console.log(date);
-
     let correctDate = date;
 
     if (/^\d{2}-\d{2}-\d{2}$/.test(date)) {
       const digits = date.split('-');
       correctDate = `${digits[0]}/${digits[1]}/${digits[2]}`;
+
+      const today = moment();
+      const tomorrow = today.clone().add(1, 'days');
+      if (today.format('DD-MM-YY') === date) correctDate = 'Hoje';
+      else if (tomorrow.format('DD-MM-YY') === date) correctDate = 'Amanhã';
     }
+
+    console.log(correctDate);
 
     const matches = await knex('matches')
       .whereRaw('lower(date) = ?', correctDate.toLowerCase())
@@ -78,8 +83,6 @@ export async function matchesRoutes(app: FastifyInstance) {
 
     const { first_date, last_date } = requestSchema.parse(request.params);
 
-    console.log(first_date);
-
     let firstDate = first_date;
     let datesRange = [];
 
@@ -94,7 +97,6 @@ export async function matchesRoutes(app: FastifyInstance) {
 
     const dates = enumerateDaysBetweenDates(firstDate, last_date);
     datesRange = datesRange.concat(dates);
-    console.log(datesRange);
 
     const matches = await knex('matches')
       .whereIn('date', datesRange)
@@ -130,8 +132,6 @@ export async function matchesRoutes(app: FastifyInstance) {
     const championship = requestSchema
       .parse(request.params)
       .championship.toLowerCase();
-
-    console.log(championship);
 
     const matches = await knex('matches')
       .whereRaw('lower(championship) = ?', championship)

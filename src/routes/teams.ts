@@ -38,7 +38,7 @@ export async function teamsRoutes(app: FastifyInstance) {
       ])
       .limit(1);
 
-    return teams;
+    return teams[0];
   });
 
   app.get('/championship/:championship', async request => {
