@@ -13,7 +13,8 @@
     "update": "tsx services/insert_data.ts",
     "migrations": "knex migrate:rollback --all && knex migrate:latest",
     "populate": "yarn migrations && yarn scrap && yarn update",
-    "build": "yarn populate && tsup src --out-dir build"
+    "build": "yarn populate && tsup src --out-dir build",
+    "fast-build": "yarn migrations && yarn update && tsup src --out-dir build"
   },
   "keywords": [],
   "author": "",
