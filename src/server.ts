@@ -6,6 +6,8 @@ import { championshipRoutes } from './routes/championship';
 
 const app = fastify();
 
+const port = env.PORT;
+
 app.register(teamsRoutes, {
   prefix: 'teams'
 });
@@ -24,4 +26,6 @@ app.get('/', async function (request, reply) {
     .send({ hello: 'world' });
 });
 
-app.listen({ port: env.PORT }).then(() => console.log('HTTP Server Running!'));
+app
+  .listen({ port: env.PORT })
+  .then(() => console.log(`Http server is running on ${port}`));
