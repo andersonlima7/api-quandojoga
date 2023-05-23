@@ -15,7 +15,7 @@
     "populate": "yarn migrations && yarn scrap && yarn update",
     "build": "yarn populate && tsup src --out-dir build",
     "fast-build": "yarn migrations && yarn update && tsup src --out-dir build",
-    "vercel-build": "yarn migrations"
+    "vercel-build": "yarn migrations && yarn update"
   },
   "keywords": [],
   "author": "",
