@@ -3,15 +3,8 @@ import { env } from './env';
 import { teamsRoutes } from './routes/teams';
 import { matchesRoutes } from './routes/matches';
 import { championshipRoutes } from './routes/championship';
-import cors from '@fastify/cors';
 
 const app = fastify();
-
-app.register(cors, {
-  origin: '*', // ou '*', para permitir de qualquer origem
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type']
-});
 
 app.register(teamsRoutes, {
   prefix: 'teams'
