@@ -2,9 +2,14 @@ import { FastifyInstance } from 'fastify';
 import { knex } from '../database';
 import { z } from 'zod';
 import moment from 'moment';
+import 'moment-timezone';
 
 export async function matchesRoutes(app: FastifyInstance) {
   moment.locale('pt-br');
+
+  // Configure o fuso horário para o Brasil
+
+  moment.tz.setDefault('America/Sao_Paulo');
 
   const enumerateDaysBetweenDates = (startDate: string, endDate: string) => {
     const dates = [];
@@ -65,6 +70,7 @@ export async function matchesRoutes(app: FastifyInstance) {
       else if (tomorrow.format('DD-MM-YY') === date) correctDate = 'Amanhã';
     }
 
+    console.log(date);
     console.log(correctDate);
 
     const matches = await knex('matches')
