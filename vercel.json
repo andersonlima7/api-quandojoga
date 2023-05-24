@@ -14,8 +14,8 @@
   ],
   "crons": [
     {
-      "path": "services/populate.ts",
-      "schedule": "0 05 * * *"
+      "path": "/services/populate.ts",
+      "schedule": "0 5 * * *"
     }
   ]
 }
