@@ -26,20 +26,18 @@ app.register(championshipRoutes, {
   prefix: 'championship'
 });
 
-// Rota especial para listar todos os endpoints
 app.get('/TJjto76ZDsUMtZX3GpKkud55', (req, res) => {
-  // exec('yarn populate', (error, stdout, stderr) => {
-  //   if (error) {
-  //     console.error(`Erro ao executar o comando: ${error.message}`);
-  //     return;
-  //   }
-  //   if (stderr) {
-  //     console.error(`Erro de saída do comando: ${stderr}`);
-  //     return;
-  //   }
-  //   console.log(`Saída do comando: ${stdout}`);
-  // });
-  res.send('Cron ok!');
+  exec('yarn populate', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Erro ao executar o comando: ${error.message}`);
+      return;
+    }
+    if (stderr) {
+      console.error(`Erro de saída do comando: ${stderr}`);
+      return;
+    }
+    console.log(`Saída do comando: ${stdout}`);
+  });
 });
 
 app.get('/', async () => {
