@@ -26,22 +26,22 @@ app.register(championshipRoutes, {
   prefix: 'championship'
 });
 
-app.get('/TJjto76ZDsUMtZX3GpKkud55', (req, res) => {
-  exec('yarn populate', (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Erro ao executar o comando: ${error.message}`);
-      res.status(400);
-      return;
-    }
-    if (stderr) {
-      console.error(`Erro de saída do comando: ${stderr}`);
-      res.status(400);
-      return;
-    }
-    console.log(`Saída do comando: ${stdout}`);
-    res.status(200).send('Atualizando dados');
-  });
-});
+// app.get('/TJjto76ZDsUMtZX3GpKkud55', (req, res) => {
+//   exec('yarn populate', (error, stdout, stderr) => {
+//     if (error) {
+//       console.error(`Erro ao executar o comando: ${error.message}`);
+//       res.status(400);
+//       return;
+//     }
+//     if (stderr) {
+//       console.error(`Erro de saída do comando: ${stderr}`);
+//       res.status(400);
+//       return;
+//     }
+//     console.log(`Saída do comando: ${stdout}`);
+//     res.status(200).send('Atualizando dados');
+//   });
+// });
 
 app.get('/', async () => {
   const routes = {
