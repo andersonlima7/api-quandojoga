@@ -11,5 +11,11 @@
       "src": "(.*)",
       "dest": "src/server.ts"
     }
+  ],
+  "crons": [
+    {
+      "path": "/services/populate.ts",
+      "schedule": "0 5 * * *"
+    }
   ]
 }

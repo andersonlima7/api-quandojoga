@@ -5,6 +5,8 @@ import { matchesRoutes } from './routes/matches';
 import { championshipRoutes } from './routes/championship';
 import cors from '@fastify/cors';
 
+import { exec } from 'child_process';
+
 const app = fastify();
 
 app.register(cors, {
@@ -24,11 +26,22 @@ app.register(championshipRoutes, {
   prefix: 'championship'
 });
 
-// Rota especial para listar todos os endpoints
-app.get('/endpoints', (req, res) => {
-  const routes = app.printRoutes();
-  res.send(routes);
-});
+// app.get('/TJjto76ZDsUMtZX3GpKkud55', (req, res) => {
+//   exec('yarn populate', (error, stdout, stderr) => {
+//     if (error) {
+//       console.error(`Erro ao executar o comando: ${error.message}`);
+//       res.status(400);
+//       return;
+//     }
+//     if (stderr) {
+//       console.error(`Erro de saída do comando: ${stderr}`);
+//       res.status(400);
+//       return;
+//     }
+//     console.log(`Saída do comando: ${stdout}`);
+//     res.status(200).send('Atualizando dados');
+//   });
+// });
 
 app.get('/', async () => {
   const routes = {
