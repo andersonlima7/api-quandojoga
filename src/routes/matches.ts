@@ -58,15 +58,17 @@ export async function matchesRoutes(app: FastifyInstance) {
 
     const { date } = requestSchema.parse(request.params);
 
+    let correctDate = date;
+
     if (/^\d{2}-\d{2}-\d{2}$/.test(date)) {
+      const digits = date.split('-');
+      correctDate = `${digits[0]}/${digits[1]}/${digits[2]}`;
       const matches = await knex('matches')
-        .whereRaw('lower(date) = ?', date.toLowerCase())
+        .whereRaw('lower(date) = ?', correctDate.toLowerCase())
         .select('*');
 
       return matches;
-    } else {
-      return response.code(400).send('Bad request, date is not valid');
-    }
+    } else return response.code(400).send('Bad Request, invalid date format');
   });
 
   // Returns all matches of a date range
