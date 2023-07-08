@@ -1,4 +1,3 @@
-# bibliotecas
 import json
 import requests
 from bs4 import BeautifulSoup
@@ -15,7 +14,6 @@ all_matches_seeds = []
 description = ''
 
 league = ''
-# first_accept_cookie = True
 
 
 def getDatesSeeds():
@@ -52,7 +50,6 @@ def getMatchSeeds(seed):
     matches_seeds = []
     print(seed)
 
-    # soup = BeautifulSoup(driver.page_source, 'html.parser')
     page = requests.get(seed)
     soup = BeautifulSoup(page.text, "html.parser")
 
@@ -106,6 +103,15 @@ def scrapping (seed, description) :
         championship_name = championship_info[2].contents[0]
 
         match_date = match_info[1].find_all('span')[2].contents[0]
+
+        today = datetime.now();
+        if(match_date == 'Hoje'):
+            match_date = today.strftime("%d/%m/%y")
+        elif(match_date == 'Amanhã'):
+            tomorrow = today + timedelta(days=1)
+            match_date = tomorrow.strftime("%d/%m/%y")
+
+
         size = len(match_info)
         if(size >= 3):
             location = match_info[2].find_all('span')[2].contents[0]
