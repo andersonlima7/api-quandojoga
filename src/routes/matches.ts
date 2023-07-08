@@ -51,33 +51,22 @@ export async function matchesRoutes(app: FastifyInstance) {
   });
 
   // Returns all matches of a date
-  app.get('/date/:date', async request => {
+  app.get('/date/:date', async (request, response) => {
     const requestSchema = z.object({
       date: z.string()
     });
 
     const { date } = requestSchema.parse(request.params);
 
-    let correctDate = date;
-
     if (/^\d{2}-\d{2}-\d{2}$/.test(date)) {
-      const digits = date.split('-');
-      correctDate = `${digits[0]}/${digits[1]}/${digits[2]}`;
+      const matches = await knex('matches')
+        .whereRaw('lower(date) = ?', date.toLowerCase())
+        .select('*');
 
-      const today = moment();
-      const tomorrow = today.clone().add(1, 'days');
-      if (today.format('DD-MM-YY') === date) correctDate = 'Hoje';
-      else if (tomorrow.format('DD-MM-YY') === date) correctDate = 'Amanhã';
+      return matches;
+    } else {
+      return response.code(400).send('Bad request, date is not valid');
     }
-
-    console.log(date);
-    console.log(correctDate);
-
-    const matches = await knex('matches')
-      .whereRaw('lower(date) = ?', correctDate.toLowerCase())
-      .select('*');
-
-    return matches;
   });
 
   // Returns all matches of a date range
@@ -92,14 +81,9 @@ export async function matchesRoutes(app: FastifyInstance) {
     let firstDate = first_date;
     let datesRange = [];
 
-    if (first_date.toLowerCase() === 'hoje') {
-      firstDate = moment().format('DD-MM-YY');
-      datesRange.push('Hoje', 'Amanhã');
-    } else {
-      const digitsDate = first_date.split('-');
-      const formattedDate = `${digitsDate[0]}/${digitsDate[1]}/${digitsDate[2]}`;
-      datesRange.push(formattedDate);
-    }
+    const digitsDate = first_date.split('-');
+    const formattedDate = `${digitsDate[0]}/${digitsDate[1]}/${digitsDate[2]}`;
+    datesRange.push(formattedDate);
 
     const dates = enumerateDaysBetweenDates(firstDate, last_date);
     datesRange = datesRange.concat(dates);
