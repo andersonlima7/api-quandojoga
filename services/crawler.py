@@ -55,14 +55,14 @@ def getMatchSeeds(seed):
 
     description = ''
 
-    championship_matches = soup.find_all('div', {'class': 'XpaLayout_xpaLayoutContainerComponentResolver__32Dls xpaLayoutContainerComponentResolver--matchCardsList'})
+    championship_matches = soup.find_all('div', {'class': 'XpaLayout_xpaLayoutContainerComponentResolver__jwpy6 xpaLayoutContainerComponentResolver--matchCardsList'})
     for championship in championship_matches:
-        match_description_element = championship.find('div', {'class': 'SectionHeader_title__fVpdo'})
+        match_description_element = championship.find('div', {'class': 'SectionHeader_container__iVfZ9'})
         if match_description_element:
-            match_description_h3 = match_description_element.find('h3', {'class': 'title-7-medium SectionHeader_subtitle__vO7cC title-6-bold'})
+            match_description_h3 = match_description_element.find('h3', {'class': 'title-7-medium SectionHeader_subtitle__966Mu'})
             if match_description_h3:
                 description = match_description_h3.contents[0]            
-            matches_links = championship.find_all('a', {"class": "MatchCard_matchCard__JSuaw"})
+            matches_links = championship.find_all('a', {"class": "MatchCard_matchCard__iOv4G"})
             for link in matches_links:
                 href = link.get("href")
                 new_seed = f"https://onefootball.com{href}"
@@ -88,15 +88,15 @@ def scrapping (seed, description) :
    
     
      
-    teams = soup.find_all(class_="MatchScoreTeam_container__Wt_gJ")
+    teams = soup.find_all(class_="MatchScoreTeam_container__1X5t5")
 
     try:
-        team_home_logo = teams[0].find('img', {"class": "EntityLogo_entityLogoImage___mo9D"}).attrs['src']
-        team_home_name = teams[0].find('span', {"class": "MatchScoreTeam_name__KtOJo"}).contents[0]
-        team_away_logo = teams[1].find('img', {"class": "EntityLogo_entityLogoImage___mo9D"}).attrs['src']
-        team_away_name = teams[1].find('span', {"class": "MatchScoreTeam_name__KtOJo"}).contents[0]
-        match_time = soup.find('span', {"class": "title-6-bold MatchScore_numeric__OJDQ3"}).contents[0]
-        match_info = soup.find('ul', {"class": "MatchInfo_entries__lSpQD"}).find_all('li')
+        team_home_logo = teams[0].find('img', {"class": "EntityLogo_entityLogoImage__4X0wF"}).attrs['src']
+        team_home_name = teams[0].find('span', {"class": "MatchScoreTeam_name__zzQrD"}).contents[0]
+        team_away_logo = teams[1].find('img', {"class": "EntityLogo_entityLogoImage__4X0wF"}).attrs['src']
+        team_away_name = teams[1].find('span', {"class": "MatchScoreTeam_name__zzQrD"}).contents[0]
+        match_time = soup.find('span', {"class": "title-6-bold MatchScore_numeric__ke8YT"}).contents[0]
+        match_info = soup.find('ul', {"class": "MatchInfo_entries__sQpi7"}).find_all('li')
 
         championship_info = match_info[0].find_all('span')
         championship_logo = championship_info[0].find('img').attrs['src']
