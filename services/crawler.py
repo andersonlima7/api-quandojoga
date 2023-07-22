@@ -30,7 +30,6 @@ def getDatesSeeds():
     # Obter o último dia válido do próximo mês
     last_day = calendar.monthrange(new_year_number, new_month_number)[1]
     new_date_string = f"{new_year_number}-{new_month_number:02d}-{last_day}"
-    print(new_date_string)  
 
 
     end_date = datetime.strptime(new_date_string, "%Y-%m-%d")
@@ -47,11 +46,14 @@ def getDatesSeeds():
 
 def getMatchSeeds(seed):
 
+    main_leagues = ["Brasileirão Série A", "Brasileirão Série B", "Brasileirão Série C", "Brasileirão Série D", "Brasileirão Feminino", "Copa Betano do Brasil", "CONMEBOL Libertadores", "CONMEBOL Sudamericana", "Primera División", "Primera División de Argentina", "Premier League", "Russian Premier League","LaLiga", "Serie A", "Bundesliga", "2. Bundesliga", "Ligue 1 Uber Eats", "Liga Portugal", "UEFA Liga dos Campeões", "UEFA Liga Europa", "Saudi Professional League", "Major League Soccer", "Copa do Mundo Feminina™"]
     matches_seeds = []
     print(seed)
 
-    page = requests.get(seed)
-    soup = BeautifulSoup(page.text, "html.parser")
+    # page = requests.get(seed)
+    session_object = requests.Session()
+    page_obj = session_object.get(seed)
+    soup = BeautifulSoup(page_obj.text, "lxml")
 
     description = ''
 
@@ -59,16 +61,21 @@ def getMatchSeeds(seed):
     for championship in championship_matches:
         match_description_element = championship.find('div', {'class': 'SectionHeader_container__iVfZ9'})
         if match_description_element:
-            match_description_h3 = match_description_element.find('h3', {'class': 'title-7-medium SectionHeader_subtitle__966Mu'})
-            if match_description_h3:
-                description = match_description_h3.contents[0]            
-            matches_links = championship.find_all('a', {"class": "MatchCard_matchCard__iOv4G"})
-            for link in matches_links:
-                href = link.get("href")
-                new_seed = f"https://onefootball.com{href}"
-                if new_seed not in all_matches_seeds:
-                    matches_seeds.append({"seed": new_seed, "description": description})
-                    all_matches_seeds.append(new_seed)
+            match_championship = match_description_element.find('h2', {'class': 'title-6-bold'})
+            if match_championship.contents[0] in main_leagues: 
+                match_description_h3 = match_description_element.find('h3', {'class': 'title-7-medium SectionHeader_subtitle__966Mu title-6-bold'})
+                if match_description_h3:
+                    description = match_description_h3.contents[0]
+                
+                matches_links = championship.find_all('a', {"class": "MatchCard_matchCard__iOv4G"})
+                for link in matches_links:
+                    is_live = link.find('span', {'class': 'SimpleMatchCard_simpleMatchCard__liveIndicator__V0ix5'})
+                    if(is_live): continue
+                    href = link.get("href")
+                    new_seed = f"https://onefootball.com{href}"
+                    if new_seed not in all_matches_seeds:
+                        matches_seeds.append({"seed": new_seed, "description": description})
+                        all_matches_seeds.append(new_seed)
 
    
     return matches_seeds
